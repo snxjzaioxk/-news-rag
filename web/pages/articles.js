@@ -10,7 +10,7 @@ export default function Articles() {
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
 
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001'
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || (typeof window !== 'undefined' ? '' : 'http://localhost:3005')
   const LIMIT = 20
 
   useEffect(() => {

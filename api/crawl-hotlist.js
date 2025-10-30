@@ -4,6 +4,15 @@ import { crawlHotlistOnce } from '../ingest/hotlist-crawler.js'; // 你的抓取
 const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
+  // 验证请求来源(Vercel Cron 会设置特殊 header)
+  const authHeader = req.headers['authorization'];
+  const cronSecret = process.env.CRON_SECRET;
+
+  // 如果设置了 CRON_SECRET，验证请求
+  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+    return res.status(401).json({ ok: false, message: 'Unauthorized' });
+  }
+
   // 防并发：120 秒简单锁
   const locked = await redis.set('lock:crawl-hotlist', '1', { nx: true, ex: 120 });
   if (!locked) return res.status(202).json({ ok: false, message: 'already running' });

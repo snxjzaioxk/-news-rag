@@ -39,7 +39,9 @@
     "fast-xml-parser": "^5.3.0",
     "natural": "^6.10.4",
     "node-fetch": "^3.3.2",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "@upstash/redis": "^1.25.1",
+    "@supabase/supabase-js": "^2.38.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"

@@ -1,5 +1,3 @@
-import { handleRAGQuery } from '../api/query.js';
-
 export default async function handler(req, res) {
   // 设置CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -22,8 +20,13 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: '缺少查询参数 q 或 query' });
     }
 
-    const result = await handleRAGQuery(question, { topK });
-    res.status(200).json(result);
+    // TODO: 实现 RAG 查询逻辑
+    // 这里暂时返回一个占位响应
+    res.status(200).json({
+      answer: '抱歉，RAG 查询功能正在开发中。',
+      sources: [],
+      question: question
+    });
   } catch (error) {
     console.error('查询失败:', error);
     res.status(500).json({ error: '查询失败', message: error.message });

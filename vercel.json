@@ -5,11 +5,5 @@
       "memory": 512,
       "maxDuration": 60
     }
-  },
-  "crons": [
-    {
-      "path": "/api/crawl-hotlist",
-      "schedule": "0 0 * * *"
-    }
-  ]
+  }
 }

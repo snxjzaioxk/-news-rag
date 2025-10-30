@@ -1,0 +1,57 @@
+name: 热榜爬取 (Vercel + Redis)
+
+on:
+  schedule:
+    # 每 30 分钟执行一次 (UTC 时间)
+    - cron: "*/30 * * * *"
+
+  # 手动触发
+  workflow_dispatch:
+
+jobs:
+  trigger-crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    # 防止并发执行
+    concurrency:
+      group: crawl-hotlist-vercel
+      cancel-in-progress: false
+
+    steps:
+      - name: 调用 Vercel 爬取端点
+        env:
+          VERCEL_ENDPOINT: ${{ secrets.VERCEL_ENDPOINT }}
+          CRAWL_TOKEN: ${{ secrets.CRAWL_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          echo "🚀 开始触发热榜爬取..."
+          echo "⏰ 执行时间: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+
+          # 重试 3 次，每次超时 50 秒
+          for i in 1 2 3; do
+            echo "📡 尝试第 $i 次..."
+
+            if curl -fsS -m 50 \
+              -H "Authorization: Bearer ${CRAWL_TOKEN}" \
+              -H "Content-Type: application/json" \
+              "${VERCEL_ENDPOINT}"; then
+              echo "✅ 爬取触发成功！"
+              exit 0
+            else
+              echo "❌ 第 $i 次尝试失败"
+              if [ $i -lt 3 ]; then
+                echo "⏳ 等待 15 秒后重试..."
+                sleep 15
+              fi
+            fi
+          done
+
+          echo "💔 所有尝试均失败"
+          exit 1
+
+      - name: 记录执行结果
+        if: always()
+        run: |
+          echo "📊 执行完成时间: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"

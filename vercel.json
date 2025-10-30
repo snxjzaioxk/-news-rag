@@ -1,5 +1,12 @@
 {
   "functions": {
-    "api/*.js": { "runtime": "nodejs18.x", "maxDuration": 60, "memory": 512 }
-  }
+    "api/*.js": {
+      "runtime": "nodejs22.x",
+      "memory": 512,
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    { "path": "/api/crawl-hotlist", "schedule": "0 * * * *" }
+  ]
 }

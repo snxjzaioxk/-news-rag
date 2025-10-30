@@ -1,0 +1,78 @@
+name: 每日新闻与热榜完整入库
+
+on:
+  # 定时触发 - 每天UTC 0点和12点 (北京时间8点和20点)
+  schedule:
+    - cron: '0 0,12 * * *'
+
+  # 手动触发
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 创建数据目录
+        run: mkdir -p data
+
+      - name: 执行爬取和入库
+        env:
+          # AI模型配置
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          GLM_EMBED_URL: ${{ secrets.GLM_EMBED_URL }}
+          GLM_CHAT_URL: ${{ secrets.GLM_CHAT_URL }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          SILICONFLOW_EMBED_URL: ${{ secrets.SILICONFLOW_EMBED_URL }}
+          SILICONFLOW_CHAT_URL: ${{ secrets.SILICONFLOW_CHAT_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+          # 向量数据库配置
+          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+          PINECONE_ENVIRONMENT: ${{ secrets.PINECONE_ENVIRONMENT }}
+          PINECONE_INDEX: ${{ secrets.PINECONE_INDEX }}
+
+          # R2配置
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: |
+          echo "========== 开始执行入库任务 =========="
+          node ingest/main.js
+          echo "========== 入库任务完成 =========="
+
+      - name: 上传数据文件到artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-data-${{ github.run_number }}
+          path: |
+            data/*.json
+          retention-days: 7
+
+      - name: 显示统计信息
+        if: success()
+        run: |
+          if [ -f data/report.json ]; then
+            echo "========== 入库统计 =========="
+            cat data/report.json
+          fi
+
+      - name: 通知失败
+        if: failure()
+        run: |
+          echo "入库任务失败,请检查日志"
+          exit 1

@@ -1,0 +1,430 @@
+{
+  "data": [
+    {
+      "id": "https://github.com/DigitalPlatDev/FreeDomain",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "DigitalPlatDev/FreeDomain",
+      "url": "https://github.com/DigitalPlatDev/FreeDomain",
+      "pubDate": "2024-05-30T13:23:00Z",
+      "description": "DigitalPlat FreeDomain: Free Domain For Everyone",
+      "hotIndex": 1,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 112578,
+        "language": "HTML",
+        "forks": 2073
+      }
+    },
+    {
+      "id": "https://github.com/deepseek-ai/DeepSeek-V3",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "deepseek-ai/DeepSeek-V3",
+      "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+      "pubDate": "2024-12-26T09:52:40Z",
+      "description": "",
+      "hotIndex": 2,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 100058,
+        "language": "Python",
+        "forks": 16316
+      }
+    },
+    {
+      "id": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "pubDate": "2025-03-05T16:38:29Z",
+      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus Agent Tools, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "hotIndex": 3,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 93640,
+        "language": null,
+        "forks": 25282
+      }
+    },
+    {
+      "id": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "url": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "pubDate": "2025-01-20T11:57:28Z",
+      "description": "",
+      "hotIndex": 4,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 91409,
+        "language": null,
+        "forks": 11772
+      }
+    },
+    {
+      "id": "https://github.com/microsoft/markitdown",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "microsoft/markitdown",
+      "url": "https://github.com/microsoft/markitdown",
+      "pubDate": "2024-11-13T19:56:40Z",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "hotIndex": 5,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 82252,
+        "language": "Python",
+        "forks": 4624
+      }
+    },
+    {
+      "id": "https://github.com/google-gemini/gemini-cli",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "pubDate": "2025-04-17T17:04:31Z",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "hotIndex": 6,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 80895,
+        "language": "TypeScript",
+        "forks": 8968
+      }
+    },
+    {
+      "id": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "Shubhamsaboo/awesome-llm-apps",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "pubDate": "2024-04-29T05:30:25Z",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "hotIndex": 7,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 74141,
+        "language": "Python",
+        "forks": 9646
+      }
+    },
+    {
+      "id": "https://github.com/punkpeye/awesome-mcp-servers",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "punkpeye/awesome-mcp-servers",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "pubDate": "2024-11-30T04:49:10Z",
+      "description": "A collection of MCP servers.",
+      "hotIndex": 8,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 73862,
+        "language": null,
+        "forks": 6182
+      }
+    },
+    {
+      "id": "https://github.com/browser-use/browser-use",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "browser-use/browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "pubDate": "2024-10-31T16:00:56Z",
+      "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "hotIndex": 9,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 71920,
+        "language": "Python",
+        "forks": 8530
+      }
+    },
+    {
+      "id": "https://github.com/modelcontextprotocol/servers",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "modelcontextprotocol/servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "pubDate": "2024-11-19T01:10:17Z",
+      "description": "Model Context Protocol Servers",
+      "hotIndex": 10,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 71529,
+        "language": "TypeScript",
+        "forks": 8563
+      }
+    },
+    {
+      "id": "https://github.com/firecrawl/firecrawl",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "pubDate": "2024-04-15T21:02:29Z",
+      "description": "🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data",
+      "hotIndex": 11,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 65404,
+        "language": "TypeScript",
+        "forks": 5158
+      }
+    },
+    {
+      "id": "https://github.com/OpenHands/OpenHands",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "OpenHands/OpenHands",
+      "url": "https://github.com/OpenHands/OpenHands",
+      "pubDate": "2024-03-13T03:33:31Z",
+      "description": "🙌 OpenHands: Code Less, Make More",
+      "hotIndex": 12,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 64563,
+        "language": "Python",
+        "forks": 7838
+      }
+    },
+    {
+      "id": "https://github.com/unclecode/crawl4ai",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "unclecode/crawl4ai",
+      "url": "https://github.com/unclecode/crawl4ai",
+      "pubDate": "2024-05-09T09:48:50Z",
+      "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+      "hotIndex": 13,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 55197,
+        "language": "Python",
+        "forks": 5520
+      }
+    },
+    {
+      "id": "https://github.com/LadybirdBrowser/ladybird",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "LadybirdBrowser/ladybird",
+      "url": "https://github.com/LadybirdBrowser/ladybird",
+      "pubDate": "2024-05-30T09:18:10Z",
+      "description": "Truly independent web browser",
+      "hotIndex": 14,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 54633,
+        "language": "C++",
+        "forks": 2414
+      }
+    },
+    {
+      "id": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "RVC-Boss/GPT-SoVITS",
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "pubDate": "2024-01-14T18:05:21Z",
+      "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+      "hotIndex": 15,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 51916,
+        "language": "Python",
+        "forks": 5689
+      }
+    },
+    {
+      "id": "https://github.com/cline/cline",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "cline/cline",
+      "url": "https://github.com/cline/cline",
+      "pubDate": "2024-07-06T07:28:10Z",
+      "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+      "hotIndex": 16,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 51809,
+        "language": "TypeScript",
+        "forks": 7550
+      }
+    },
+    {
+      "id": "https://github.com/FoundationAgents/OpenManus",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "FoundationAgents/OpenManus",
+      "url": "https://github.com/FoundationAgents/OpenManus",
+      "pubDate": "2025-03-06T14:08:14Z",
+      "description": "No fortress, purely open ground.  OpenManus is Coming.",
+      "hotIndex": 17,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 50561,
+        "language": "Python",
+        "forks": 8835
+      }
+    },
+    {
+      "id": "https://github.com/xai-org/grok-1",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "xai-org/grok-1",
+      "url": "https://github.com/xai-org/grok-1",
+      "pubDate": "2024-03-17T08:53:38Z",
+      "description": "Grok open release",
+      "hotIndex": 18,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 50540,
+        "language": "Python",
+        "forks": 8370
+      }
+    },
+    {
+      "id": "https://github.com/openai/codex",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "pubDate": "2025-04-13T05:37:54Z",
+      "description": "Lightweight coding agent that runs in your terminal",
+      "hotIndex": 19,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 49280,
+        "language": "Rust",
+        "forks": 6025
+      }
+    },
+    {
+      "id": "https://github.com/dockur/windows",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "dockur/windows",
+      "url": "https://github.com/dockur/windows",
+      "pubDate": "2024-01-14T13:09:40Z",
+      "description": "Windows inside a Docker container.",
+      "hotIndex": 20,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 48078,
+        "language": "Shell",
+        "forks": 3582
+      }
+    },
+    {
+      "id": "https://github.com/opendatalab/MinerU",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "opendatalab/MinerU",
+      "url": "https://github.com/opendatalab/MinerU",
+      "pubDate": "2024-02-29T08:52:34Z",
+      "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.",
+      "hotIndex": 21,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 47702,
+        "language": "Python",
+        "forks": 3934
+      }
+    },
+    {
+      "id": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "harry0703/MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "pubDate": "2024-03-11T02:57:34Z",
+      "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+      "hotIndex": 22,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 47389,
+        "language": "Python",
+        "forks": 6617
+      }
+    },
+    {
+      "id": "https://github.com/microsoft/ai-agents-for-beginners",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "microsoft/ai-agents-for-beginners",
+      "url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "pubDate": "2024-11-28T10:42:52Z",
+      "description": "12 Lessons to Get Started Building AI Agents",
+      "hotIndex": 23,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 43489,
+        "language": "Jupyter Notebook",
+        "forks": 14554
+      }
+    },
+    {
+      "id": "https://github.com/github/spec-kit",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "github/spec-kit",
+      "url": "https://github.com/github/spec-kit",
+      "pubDate": "2025-08-21T22:54:31Z",
+      "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "hotIndex": 24,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 43408,
+        "language": "Shell",
+        "forks": 3692
+      }
+    },
+    {
+      "id": "https://github.com/OpenCut-app/OpenCut",
+      "source": "GitHub Trending",
+      "platform": "github",
+      "category": "tech",
+      "title": "OpenCut-app/OpenCut",
+      "url": "https://github.com/OpenCut-app/OpenCut",
+      "pubDate": "2025-06-22T08:02:17Z",
+      "description": "The open-source CapCut alternative",
+      "hotIndex": 25,
+      "crawledAt": "2025-10-30T04:16:10.873Z",
+      "extra": {
+        "stars": 42914,
+        "language": "TypeScript",
+        "forks": 4052
+      }
+    }
+  ],
+  "timestamp": 1761797770873
+}

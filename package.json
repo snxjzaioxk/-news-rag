@@ -1,0 +1,47 @@
+{
+  "name": "news-rag-zero",
+  "version": "1.0.0",
+  "description": "Serverless新闻热榜 + RAG新闻摘要站",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "crawl": "node ingest/crawler.js",
+    "crawl:hotlist": "node ingest/hotlist-crawler.js",
+    "crawl:hotlist:hybrid": "node ingest/hybrid-hotlist-crawler.js",
+    "crawl:hotlist:direct": "node -e \"import('./ingest/direct-crawlers.js').then(m => Promise.all([m.fetchZhihuHot(), m.fetchWeiboHot(), m.fetchBaiduHot()]).then(r => console.log('测试成功:', r.flat().length, '条')))\"",
+    "crawl:v2": "node ingest/orchestrator.js hotlist",
+    "crawl:v2:full": "node ingest/orchestrator.js full",
+    "crawl:v2:category": "node ingest/orchestrator.js category",
+    "crawl:v2:status": "node ingest/orchestrator.js status",
+    "test:architecture": "node test-new-architecture.js",
+    "ingest": "node ingest/main.js",
+    "api": "node api/index.js",
+    "dev:api": "nodemon api/index.js",
+    "check:quota": "node check-quota.js",
+    "test:siliconflow": "node test-siliconflow.js",
+    "test:qwen": "node test-qwen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "news",
+    "rag",
+    "serverless",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fast-xml-parser": "^5.3.0",
+    "natural": "^6.10.4",
+    "node-fetch": "^3.3.2",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

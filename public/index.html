@@ -172,34 +172,34 @@
     </div>
 
     <div class="api-grid">
-      <a href="/api/config" class="api-card" target="_blank">
+      <a href="/api/simple-config" class="api-card" target="_blank">
         <div class="api-title">🔧 系统配置</div>
-        <div class="api-desc">检查AI模型、数据库、缓存等系统配置状态</div>
-        <div class="api-url">GET /api/config</div>
+        <div class="api-desc">检查AI模型、数据库等基础配置状态</div>
+        <div class="api-url">GET /api/simple-config</div>
       </a>
 
-      <a href="/api/test" class="api-card" target="_blank">
+      <a href="/api/simple-test" class="api-card" target="_blank">
         <div class="api-title">🧪 API测试</div>
         <div class="api-desc">测试API基础功能和连接状态</div>
-        <div class="api-url">GET /api/test</div>
+        <div class="api-url">GET /api/simple-test</div>
       </a>
 
-      <a href="/health" class="api-card" target="_blank">
+      <a href="/api/simple-health" class="api-card" target="_blank">
         <div class="api-title">💓 健康检查</div>
         <div class="api-desc">系统健康状态和基础信息</div>
-        <div class="api-url">GET /health</div>
+        <div class="api-url">GET /api/simple-health</div>
       </a>
 
-      <a href="/api/articles" class="api-card" target="_blank">
+      <a href="/api/articles-optimized" class="api-card" target="_blank">
         <div class="api-title">📰 文章列表</div>
         <div class="api-desc">获取最新的新闻文章列表</div>
-        <div class="api-url">GET /api/articles</div>
+        <div class="api-url">GET /api/articles-optimized</div>
       </a>
 
       <div class="api-card" onclick="testQuery()">
         <div class="api-title">🤖 AI问答</div>
         <div class="api-desc">智能问答接口（需要数据支持）</div>
-        <div class="api-url">POST /api/query</div>
+        <div class="api-url">POST /api/query-optimized</div>
       </div>
     </div>
 
@@ -224,7 +224,7 @@
     // 测试API状态
     async function checkAPIStatus() {
       try {
-        const response = await fetch('/api/config');
+        const response = await fetch('/api/simple-config');
         if (response.ok) {
           const data = await response.json();
           document.getElementById('apiStatus').textContent =
@@ -241,7 +241,7 @@
     function testQuery() {
       const query = prompt('请输入您想咨询的问题：', '今天有什么热门新闻？');
       if (query) {
-        fetch('/api/query', {
+        fetch('/api/query-optimized', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

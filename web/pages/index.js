@@ -103,25 +103,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen">
         {/* 导航栏 */}
-        <nav className="bg-white shadow-sm">
+        <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <div className="flex items-center">
-                <h1 className="text-2xl font-bold text-blue-600">新闻热榜 RAG</h1>
+                <h1 className="text-2xl font-bold gradient-text">新闻热榜 RAG</h1>
               </div>
-              <div className="flex space-x-4">
-                <Link href="/" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+              <div className="flex space-x-2">
+                <Link href="/" className="nav-link bg-blue-50">
                   首页
                 </Link>
-                <Link href="/hotlist" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+                <Link href="/hotlist" className="nav-link">
                   热榜
                 </Link>
-                <Link href="/search" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+                <Link href="/search" className="nav-link">
                   智能搜索
                 </Link>
-                <Link href="/articles" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+                <Link href="/articles" className="nav-link">
                   文章列表
                 </Link>
               </div>
@@ -134,18 +134,18 @@ export default function Home() {
           {/* 统计信息 */}
           {stats && (
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-              <StatCard title="总文章数" value={stats.stats?.articles || 0} />
-              <StatCard title="文本片段" value={stats.stats?.chunks || 0} />
-              <StatCard title="向量数量" value={stats.stats?.vectors || 0} />
-              <StatCard title="数据源" value={Object.keys(stats.sources || {}).length} />
+              <StatCard title="总文章数" value={stats.stats?.articles || 0} icon="📄" />
+              <StatCard title="文本片段" value={stats.stats?.chunks || 0} icon="📝" />
+              <StatCard title="向量数量" value={stats.stats?.vectors || 0} icon="🔢" />
+              <StatCard title="数据源" value={Object.keys(stats.sources || {}).length} icon="🌐" />
             </div>
           )}
 
           {/* 热榜 */}
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 card-hover">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">今日热榜</h2>
-              <span className="text-sm text-gray-500">实时更新</span>
+              <h2 className="text-2xl font-bold text-gray-900">今日热榜 🔥</h2>
+              <span className="text-sm text-gray-500 bg-green-100 px-3 py-1 rounded-full">实时更新</span>
             </div>
 
             {error ? (
@@ -203,12 +203,12 @@ export default function Home() {
           </div>
 
           {/* 智能搜索入口 */}
-          <div className="mt-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg p-8 text-white">
-            <h2 className="text-3xl font-bold mb-4">AI智能问答</h2>
-            <p className="text-lg mb-6">基于RAG技术,智能检索新闻内容并生成准确回答</p>
+          <div className="mt-8 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 rounded-xl shadow-2xl p-8 text-white card-hover">
+            <h2 className="text-3xl font-bold mb-4">AI智能问答 ✨</h2>
+            <p className="text-lg mb-6 text-blue-50">基于RAG技术,智能检索新闻内容并生成准确回答</p>
             <Link
               href="/search"
-              className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               立即体验 →
             </Link>
@@ -216,10 +216,10 @@ export default function Home() {
         </main>
 
         {/* 页脚 */}
-        <footer className="bg-white border-t mt-12">
+        <footer className="bg-white/50 backdrop-blur-sm border-t mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <p className="text-center text-gray-500 text-sm">
-              新闻热榜 RAG - Powered by AI | 数据更新时间: {stats?.timestamp ? new Date(stats.timestamp).toLocaleString('zh-CN') : '未知'}
+            <p className="text-center text-gray-600 text-sm">
+              新闻热榜 RAG - Powered by AI ⚡ | 数据更新时间: {stats?.timestamp ? new Date(stats.timestamp).toLocaleString('zh-CN') : '未知'}
             </p>
           </div>
         </footer>
@@ -228,11 +228,16 @@ export default function Home() {
   )
 }
 
-function StatCard({ title, value }) {
+function StatCard({ title, value, icon }) {
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h3 className="text-sm font-medium text-gray-500 mb-2">{title}</h3>
-      <p className="text-3xl font-bold text-gray-900">{value.toLocaleString()}</p>
+    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-md p-6 card-hover border border-blue-100">
+      <div className="flex items-center justify-between">
+        <div>
+          <h3 className="text-sm font-medium text-gray-500 mb-2">{title}</h3>
+          <p className="text-3xl font-bold text-gray-900">{value.toLocaleString()}</p>
+        </div>
+        <div className="text-4xl">{icon}</div>
+      </div>
     </div>
   )
 }
@@ -262,9 +267,9 @@ function ArticleCard({ article, index }) {
   }
 
   return (
-    <div className="flex items-start space-x-4 p-4 hover:bg-gray-50 rounded-lg transition">
+    <div className="flex items-start space-x-4 p-4 hover:bg-blue-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-blue-200">
       <div className="flex-shrink-0">
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold shadow-md">
           {index}
         </span>
       </div>
@@ -273,14 +278,14 @@ function ArticleCard({ article, index }) {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-lg font-semibold text-gray-900 hover:text-blue-600 line-clamp-2"
+          className="text-lg font-semibold text-gray-900 hover:text-blue-600 line-clamp-2 transition-colors"
         >
           {article.title}
         </a>
-        <div className="mt-2 flex items-center space-x-3 text-sm text-gray-500">
-          <span>{article.source}</span>
+        <div className="mt-2 flex items-center flex-wrap gap-2 text-sm text-gray-500">
+          <span className="font-medium">{article.source}</span>
           <span>•</span>
-          <span className={`px-2 py-1 rounded ${categoryColors[article.category] || categoryColors.general}`}>
+          <span className={`px-2 py-1 rounded-full text-xs font-semibold ${categoryColors[article.category] || categoryColors.general}`}>
             {article.category}
           </span>
           {getSourceTypeBadge(article.sourceType)}
@@ -301,7 +306,7 @@ function ArticleCard({ article, index }) {
             <img
               src={article.extra.thumbnail}
               alt="缩略图"
-              className="w-20 h-12 object-cover rounded"
+              className="w-24 h-16 object-cover rounded-lg shadow-sm"
               onError={(e) => e.target.style.display = 'none'}
             />
           </div>

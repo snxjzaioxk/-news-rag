@@ -1,3 +1,8 @@
 postcss.config.js
 node_modules
 .next
+.env
+.env.local
+.vercel
+dist
+build

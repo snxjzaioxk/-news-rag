@@ -1,6 +1,8 @@
 # 排除不需要上传到 Vercel 的文件
 node_modules
 .next
-.env*.local
+.env.local
+.env.development
 *.log
 .DS_Store
+Thumbs.db

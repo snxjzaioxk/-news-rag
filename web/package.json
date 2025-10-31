@@ -7,14 +7,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check-deps && next build",
+    "check-deps": "node -e \"try { require('tailwindcss'); console.log('✅ tailwindcss installed'); } catch(e) { console.error('❌ tailwindcss NOT installed'); process.exit(1); }\"",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
     "@upstash/redis": "^1.35.6",
-    "autoprefixer": "^10",
+    "autoprefixer": "^10.4.21",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
@@ -23,10 +24,10 @@
     "fast-xml-parser": "^5.3.0",
     "natural": "^6.10.4",
     "next": "^14.0.4",
-    "postcss": "^8",
+    "postcss": "^8.5.6",
     "react": "^18",
     "react-dom": "^18",
     "rss-parser": "^3.13.0",
-    "tailwindcss": "^3"
+    "tailwindcss": "^3.4.1"
   }
 }

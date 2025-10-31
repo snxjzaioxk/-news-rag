@@ -2,20 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  // 强制加载 PostCSS 配置
+  webpack: (config, { isServer }) => {
+    // 确保 CSS 正确处理
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      }
+    }
+    return config
   },
-  // 确保静态资源正确处理
-  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
-  // 优化生产构建
-  productionBrowserSourceMaps: false,
-  // 环境变量
   env: {
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || '',
-  },
-  // 确保正确处理 CSS
-  experimental: {
-    optimizeCss: false, // 禁用 CSS 优化以避免潜在问题
   },
 }
 

@@ -1,0 +1,6 @@
+# 排除不需要上传到 Vercel 的文件
+node_modules
+.next
+.env*.local
+*.log
+.DS_Store

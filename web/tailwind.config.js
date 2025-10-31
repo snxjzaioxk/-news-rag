@@ -6,18 +6,21 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
-    // 确保动态生成的样式类被包含
+    // 确保所有动态生成的样式类被包含
+    // 背景颜色 - 所有级别
     {
-      pattern: /bg-(blue|green|red|yellow|purple|pink|gray|orange|cyan|indigo)-(50|100|500|600|700|800)/,
-      variants: ['hover'],
+      pattern: /bg-(blue|green|red|yellow|purple|pink|gray|orange|cyan|indigo)-(50|100|200|300|400|500|600|700|800|900)/,
+      variants: ['hover', 'focus', 'active'],
     },
+    // 文字颜色 - 所有级别
     {
-      pattern: /text-(blue|green|red|yellow|purple|pink|gray|orange|cyan|indigo)-(50|100|500|600|700|800)/,
-      variants: ['hover'],
+      pattern: /text-(blue|green|red|yellow|purple|pink|gray|orange|cyan|indigo|white)-(50|100|200|300|400|500|600|700|800|900)/,
+      variants: ['hover', 'focus', 'active'],
     },
+    // 边框颜色 - 所有级别
     {
-      pattern: /border-(blue|green|red|yellow|purple|pink|gray|orange|indigo|transparent)-(100|200|300|500)/,
-      variants: ['hover'],
+      pattern: /border-(blue|green|red|yellow|purple|pink|gray|orange|indigo|transparent)-(50|100|200|300|400|500|600|700|800|900)/,
+      variants: ['hover', 'focus'],
     },
     // 常用工具类
     'min-h-screen',
@@ -26,6 +29,15 @@ module.exports = {
     'card-hover',
     'gradient-text',
     'nav-link',
+    'line-clamp-1',
+    'line-clamp-2',
+    'animate-spin',
+    'shadow-md',
+    'shadow-lg',
+    'shadow-xl',
+    'rounded-full',
+    'rounded-lg',
+    'rounded-xl',
   ],
   theme: {
     extend: {},

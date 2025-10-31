@@ -1,16 +1,22 @@
 // lib/database.js - 统一数据库操作
 import { Redis } from '@upstash/redis';
 
-// Upstash Redis配置
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL || '',
-  token: process.env.UPSTASH_REDIS_REST_TOKEN || '',
-});
+// 检查 Redis 配置是否可用
+const hasRedisConfig = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN;
+
+// Upstash Redis配置 (仅在配置存在时初始化)
+const redis = hasRedisConfig ? new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+}) : null;
 
 // 数据库操作类
 class Database {
   constructor() {
-    this.useRedis = redis.url && redis.token;
+    this.useRedis = hasRedisConfig && redis !== null;
+    if (!this.useRedis) {
+      console.log('[Database] Redis 未配置,使用本地文件模式');
+    }
   }
 
   // 获取文章列表

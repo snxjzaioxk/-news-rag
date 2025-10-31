@@ -1,6 +1,5 @@
 // ingest/crawlers/platforms/news/toutiao.js
 import { BaseCrawler } from '../../base.js';
-import fetch from 'node-fetch';
 import { cacheManager } from '../../utils/cache.js';
 
 /**

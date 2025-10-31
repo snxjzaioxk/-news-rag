@@ -1,5 +1,4 @@
 // api/llm.js - LLM生成适配器
-import fetch from 'node-fetch';
 
 /**
  * 智谱AI (GLM) 生成

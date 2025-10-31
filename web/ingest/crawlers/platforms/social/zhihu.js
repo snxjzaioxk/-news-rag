@@ -1,6 +1,5 @@
 // ingest/crawlers/platforms/social/zhihu.js
 import { BaseCrawler } from '../../base.js';
-import fetch from 'node-fetch';
 import RSSParser from 'rss-parser';
 import { cacheManager } from '../../utils/cache.js';
 

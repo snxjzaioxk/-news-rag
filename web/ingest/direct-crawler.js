@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { XMLParser } from 'fast-xml-parser';
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import path from 'path';

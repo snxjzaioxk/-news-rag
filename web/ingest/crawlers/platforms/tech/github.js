@@ -1,6 +1,5 @@
 // ingest/crawlers/platforms/tech/github.js
 import { BaseCrawler } from '../../base.js';
-import fetch from 'node-fetch';
 import { cacheManager } from '../../utils/cache.js';
 
 /**

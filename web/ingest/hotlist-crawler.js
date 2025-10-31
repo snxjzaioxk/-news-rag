@@ -1,6 +1,5 @@
 // ingest/hotlist-crawler.js - 热榜专用爬虫
 import RSSParser from 'rss-parser';
-import fetch from 'node-fetch';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';

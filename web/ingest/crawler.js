@@ -1,6 +1,5 @@
 // ingest/crawler.js
 import RSSParser from 'rss-parser';
-import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import fs from 'fs/promises';
 import path from 'path';

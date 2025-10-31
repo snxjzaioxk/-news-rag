@@ -1,5 +1,4 @@
 // ingest/direct-crawlers.js - 直接爬取各平台热榜(不依赖 RSSHub)
-import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 
 /**

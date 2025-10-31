@@ -19,19 +19,22 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
 
-      - name: 安装依赖
+      - name: 安装根目录依赖
         run: npm ci
 
+      - name: 安装 web 目录依赖
+        run: cd web && npm ci
+
       - name: 创建数据目录
-        run: mkdir -p data
+        run: mkdir -p web/data
 
       - name: 执行热榜爬取
         run: |
           echo "========== 开始热榜爬取 =========="
-          node ingest/hotlist-crawler.js
+          node web/ingest/hotlist-crawler.js
           echo "========== 热榜爬取完成 =========="
 
       - name: 上传热榜数据
@@ -40,13 +43,14 @@ jobs:
         with:
           name: hotlist-data-${{ github.run_number }}
           path: |
-            data/hotlist-*.json
+            web/data/hotlist-*.json
           retention-days: 3
 
       - name: 显示统计信息
         if: success()
         run: |
-          if [ -f data/hotlist-stats.json ]; then
+          if [ -f web/data/hotlist-stats.json ]; then
             echo "========== 热榜统计 =========="
-            cat data/hotlist-stats.json
+            cat web/data/hotlist-stats.json
           fi
+

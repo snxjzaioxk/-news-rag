@@ -19,14 +19,17 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
 
-      - name: 安装依赖
+      - name: 安装根目录依赖
         run: npm ci
 
+      - name: 安装 web 目录依赖
+        run: cd web && npm ci
+
       - name: 创建数据目录
-        run: mkdir -p data
+        run: mkdir -p web/data
 
       - name: 执行爬取和入库
         env:
@@ -51,7 +54,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
         run: |
           echo "========== 开始执行入库任务 =========="
-          node ingest/main.js
+          node web/ingest/main.js
           echo "========== 入库任务完成 =========="
 
       - name: 上传数据文件到artifacts
@@ -60,15 +63,15 @@ jobs:
         with:
           name: news-data-${{ github.run_number }}
           path: |
-            data/*.json
+            web/data/*.json
           retention-days: 7
 
       - name: 显示统计信息
         if: success()
         run: |
-          if [ -f data/report.json ]; then
+          if [ -f web/data/report.json ]; then
             echo "========== 入库统计 =========="
-            cat data/report.json
+            cat web/data/report.json
           fi
 
       - name: 通知失败
@@ -76,3 +79,4 @@ jobs:
         run: |
           echo "入库任务失败,请检查日志"
           exit 1
+

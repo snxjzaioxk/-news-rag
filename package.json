@@ -1,43 +1,24 @@
 {
-  "name": "news-rag-zero",
-  "version": "1.0.0",
-  "description": "Serverless新闻热榜 + RAG新闻摘要站",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "crawl": "node web/ingest/crawler.js",
-    "crawl:hotlist": "node web/ingest/hotlist-crawler.js",
-    "crawl:hotlist:hybrid": "node web/ingest/hybrid-hotlist-crawler.js",
-    "crawl:hotlist:direct": "node -e \"import('./web/ingest/direct-crawlers.js').then(m => Promise.all([m.fetchZhihuHot(), m.fetchWeiboHot(), m.fetchBaiduHot()]).then(r => console.log('测试成功:', r.flat().length, '条')))\"",
-    "crawl:v2": "node web/ingest/orchestrator.js hotlist",
-    "crawl:v2:full": "node web/ingest/orchestrator.js full",
-    "crawl:v2:category": "node web/ingest/orchestrator.js category",
-    "crawl:v2:status": "node web/ingest/orchestrator.js status",
-    "ingest": "node web/ingest/main.js",
-    "api": "node api/index.js",
-    "dev:api": "nodemon api/index.js",
-    "web:dev": "cd web && npm run dev",
-    "web:build": "cd web && npm run build",
-    "web:start": "cd web && npm start",
-    "dev": "npm run web:dev",
-    "build": "npm run web:build",
-    "start": "npm run web:start",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "news",
-    "rag",
-    "serverless",
-    "ai"
-  ],
-  "author": "",
-  "license": "MIT",
+  "name": "news-rag-web",
+  "version": "0.1.0",
+  "private": true,
   "engines": {
     "node": "22.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:vercel": "node vercel-build.js",
+    "check-deps": "node -e \"try { require('tailwindcss'); console.log('✅ tailwindcss installed'); } catch(e) { console.error('❌ tailwindcss NOT installed'); process.exit(1); }\"",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "node vercel-deploy.js",
+    "deploy:check": "npm run predeploy && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
     "@upstash/redis": "^1.35.6",
+    "autoprefixer": "^10.4.21",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
@@ -45,9 +26,11 @@
     "express": "^4.18.2",
     "fast-xml-parser": "^5.3.0",
     "natural": "^6.10.4",
-    "rss-parser": "^3.13.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "next": "^14.0.4",
+    "postcss": "^8.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "rss-parser": "^3.13.0",
+    "tailwindcss": "^3.4.1"
   }
 }

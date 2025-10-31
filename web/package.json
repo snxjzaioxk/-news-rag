@@ -10,7 +10,9 @@
     "build": "npm run check-deps && next build",
     "check-deps": "node -e \"try { require('tailwindcss'); console.log('✅ tailwindcss installed'); } catch(e) { console.error('❌ tailwindcss NOT installed'); process.exit(1); }\"",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "node vercel-deploy.js",
+    "deploy:check": "npm run predeploy && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
